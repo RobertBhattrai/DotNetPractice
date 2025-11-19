@@ -1,5 +1,8 @@
 ﻿public class Program
 {
+    //Task 5: Record
+    public record Book(string Title, string Author, double Price);
+
     static void Main(string[] args)
     {
         //Task 1
@@ -51,5 +54,76 @@
         // params parameter
         int total = paramDemo.SumAll(1, 2, 3, 4, 5);
         Console.WriteLine($"Sum of numbers: {total}");
+
+        //Task 4
+        // Default constructor
+        Player player1 = new Player();
+        Console.WriteLine("Player Name:" + player1.playerName);
+        Console.WriteLine("Player Level:" + player1.level);
+        Console.WriteLine("Player Health:" + player1.health);
+
+        // Parameterized constructor
+        Player player2 = new Player("Hero", 10, 150);
+        Console.WriteLine("\n\nPlayer Name:" + player2.playerName);
+        Console.WriteLine("Player Level:" + player2.level);
+        Console.WriteLine("Player Health:" + player2.health);
+
+        // Enum usage
+        Console.Write("Enter a day (e.g., Sunday): ");
+        string? dayInput = Console.ReadLine();
+
+        DayType dayType;
+        if (dayInput.Equals("Friday", StringComparison.OrdinalIgnoreCase) ||
+            dayInput.Equals("Saturday", StringComparison.OrdinalIgnoreCase))
+        {
+            dayType = DayType.Weekend;
+        }
+        else
+        {
+            dayType = DayType.Weekday;
+        }
+        Console.WriteLine($"It is: {dayType}");
+
+        // Record usage
+        Book book1 = new Book("C# Programming", "John Smith", 29.99);
+        Book book2 = book1 with { Title = "Advanced C#", Price = 39.99 };
+
+        Console.WriteLine($"First Book: {book1}");
+
+        // Deconstruction
+        var (title, author, price) = book2;
+        Console.WriteLine($"Deconstructed - Title: {title}, Author: {author}, Price: {price}");
+
+        Console.WriteLine("\nTask 6: Debugging");
+        DebuggingExample();
+
+        Console.WriteLine("\nAll Task Completed\nPress any key to exit...");
+        Console.ReadKey();
+
+    }
+
+    //New method for Debugging Demo
+    static void DebuggingExample()
+    {
+        Console.Write("Enter marks: ");
+        if (int.TryParse(Console.ReadLine(), out int marks))
+        {
+            Console.Write("Enter total: ");
+            if (int.TryParse(Console.ReadLine(), out int total))
+            {
+                // 1st Breakpoint 
+                double percentage = (double)marks / total * 100; // Fixed: added cast to double
+                // 2nd Breakpoint 
+                Console.WriteLine($"Percentage: {percentage:F2}%");
+            }
+            else
+            {
+                Console.WriteLine("Invalid total input");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid marks input");   
+        }
     }
 }

@@ -11,9 +11,6 @@ public class Player
     public Player()
     {
         Console.WriteLine("Default constructor has been called");
-        playerName = "Unknown";
-        level = 1;
-        health = 100;
     }
 
     // Parameterized constructor
@@ -22,11 +19,5 @@ public class Player
         playerName = name;
         level = lvl;
         health = hp;
-    }
-
-    // Method to display player details
-    public void DisplayPlayerInfo()
-    {
-        Console.WriteLine($"Player: {playerName}, Level: {level}, Health: {health}");
     }
 }
