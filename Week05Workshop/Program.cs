@@ -26,5 +26,29 @@ public class Program{
         printer.Print("Hello, World!");
         printer.Print(12345);
         printer.Print("Repeat this message", 3);
+
+        // Part 2: Method Overriding
+        NepaliTeacher nepaliTeacher = new NepaliTeacher("Ram");
+        EnglishTeacher englishTeacher = new EnglishTeacher("Sham");
+
+        nepaliTeacher.Teaching();
+        nepaliTeacher.SalaryInfo();
+
+        englishTeacher.Teaching();
+        englishTeacher.SalaryInfo();
+
+        // Task 4: Abstraction
+        CarAbstract car = new CarAbstract();
+        Bike bike = new Bike();
+
+        car.Display();
+        car.StartEngine();
+        car.StopEngine();
+
+        Console.WriteLine();
+
+        bike.Display();
+        bike.StartEngine();
+        bike.StopEngine();
     }
 }
