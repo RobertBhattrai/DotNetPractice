@@ -64,6 +64,20 @@ namespace Week06Workshop
             
             Book books = new Book();
             books.Task4();
+
+            //Task 5:
+            Applicant applicant = new Applicant();
+            applicant.Task5_Quantifiers();
+
+            CashierSales sales = new CashierSales();
+            sales.Task5_Aggregation();
+
+            Song song = new Song();
+            song.Task5_Elements();
+
+            //Task 6
+            Tour tour = new Tour();
+            tour.Task6();
         }
     }
 }
