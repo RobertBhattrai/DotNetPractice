@@ -53,6 +53,17 @@ namespace Week06Workshop
 
             Console.WriteLine("Numbers greater than 5:");
             ProcessNumbers(nums,n => n > 5);
+            Console.WriteLine("\n\n\n");
+
+            //Task 4:
+            Task4LINQ t4 = new Task4LINQ();
+            t4.Projection();
+            
+            Student student = new Student();
+            student.SortStudents();
+            
+            Book books = new Book();
+            books.Task4();
         }
     }
 }
