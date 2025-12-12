@@ -1,0 +1,15 @@
+﻿@page "/profile"
+
+<h2>Student Profile</h2>
+
+<img src="@photoPath" alt="Student Photo" width="150" />
+<p><strong>Name:</strong> @studentName</p>
+<p><strong>Course:</strong> @courseName</p>
+<p><strong>Batch Year:</strong> @batchYear</p>
+
+@code {
+    private string photoPath = "images/student1.jpg";
+    private string studentName = "Student Name";
+    private string courseName = ".NET MAUI Hybrid Training";
+    private string batchYear = "2025";
+}
